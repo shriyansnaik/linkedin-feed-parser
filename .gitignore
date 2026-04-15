@@ -1,0 +1,19 @@
+# API keys — never commit
+extension/bundled_keys.js
+
+# Claude Code internal
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Test HTML snapshots (local only)
+post.html
+test_feed.html
+test_post.html
+test_premium.html
+
+# OS
+.DS_Store
+Thumbs.db

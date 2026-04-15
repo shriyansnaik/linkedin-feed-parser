@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Feed Parser",
+  "version": "1.0",
+  "description": "Parse LinkedIn feed job posts into clean cards with LLM extraction",
+  "permissions": ["activeTab", "scripting", "storage", "identity"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://gmail.googleapis.com/*",
+    "<all_urls>"
+  ],
+  "oauth2": {
+    "client_id": "1032067811930-2121cu6r5l7htd4ocmitci9j3gpkc4fa.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/gmail.send"]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
